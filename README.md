@@ -16,6 +16,10 @@
 * **Tech Stack:** Python, CustomTkinter
 * **Description:** A modular, enterprise-grade desktop application that visually demonstrates the Input-Process-Output (IPO) cycle of symmetric encryption. It utilizes strict ASCII mathematical baseline shifts (`ord()`, `chr()`, `% 26`) to obfuscate plaintext into ciphertext, while automatically handling edge cases (spaces, punctuation) and providing a dual-mode interactive display for decryption validation.
 
+### [Project 3: Phishing Triage Toolkit](./DecodeLab-P3.py) 
+* **Focus:** Human Firewall, Social Engineering Detection, Threat Triage
+* **Tech Stack:** Python, CustomTkinter, `re`, `urllib`
+* **Description:** An interactive, dual-pane SOC (Security Operations Center) dashboard designed to dissect deceptive communications. It features advanced regex parsing to detect "Subdomain Traps" (right-to-left URL root analysis), header mismatch detection to identify brand spoofing, and cognitive trigger analysis (Urgency, Fear, Authority). The engine calculates a dynamic threat score to output a strict, actionable triage decision (Safe, Suspicious, or Malicious).
 ---
 
 ## ⚙️ General Setup & Installation
@@ -26,17 +30,18 @@ To explore any of the tools in this repository locally on your machine:
    ```bash
    git clone [https://github.com/Khuzaimaawab/DecodeLabs-Internship.git](https://github.com/Khuzaimaawab/DecodeLabs-Internship.git)
    cd DecodeLabs-Internship
-Install required UI libraries (For GUI projects like Project 2):
+Install required UI libraries (For GUI projects like):
 
 Bash
 pip install customtkinter
+
 Run the individual security modules:
 
 Bash
-# Run Project 1 (Terminal)
+**Run Project 1 (Terminal)**
 python DecodeLab-P1.py
 
-# Run Project 2 (GUI)
+**Run Project 2 (GUI)**
 python DecodeLab-P2.py
 (Note: Depending on your system environment, you may need to use python3 instead of python)
 
