@@ -1,9 +1,9 @@
 import customtkinter as ctk
 from tkinter import messagebox
 
-# --- SYSTEM THEME SETTINGS ---
-ctk.set_appearance_mode("dark")          # Modes: "System", "Dark", "Light"
-ctk.set_default_color_theme("dark-blue") # Themes: "blue", "dark-blue", "green"
+
+ctk.set_appearance_mode("dark")          
+ctk.set_default_color_theme("dark-blue") 
 
 class PremiumCryptoEngine:
     def __init__(self, root):
@@ -11,8 +11,7 @@ class PremiumCryptoEngine:
         self.root.title("DecodeLabs | Advanced Cryptographic Engine")
         self.root.geometry("600x600")
         self.root.resizable(False, False)
-        
-        # Main Layout Container
+
         self.main_frame = ctk.CTkFrame(self.root, corner_radius=15)
         self.main_frame.pack(pady=20, padx=20, fill="both", expand=True)
 
@@ -40,11 +39,10 @@ class PremiumCryptoEngine:
         self.input_text.pack(padx=30, pady=(5, 20), fill="x")
 
     def _build_controls(self):
-        # Control Panel Container
+
         control_frame = ctk.CTkFrame(self.main_frame, fg_color="transparent")
         control_frame.pack(padx=30, fill="x", pady=5)
-
-        # Shift Key Slider & Entry
+        
         shift_label = ctk.CTkLabel(control_frame, text="CRYPTOGRAPHIC SHIFT KEY (0-25):", 
                                    font=ctk.CTkFont(size=11, weight="bold"))
         shift_label.pack(anchor="w")
@@ -57,7 +55,6 @@ class PremiumCryptoEngine:
         self.shift_display = ctk.CTkLabel(control_frame, text="Key: 5", font=ctk.CTkFont(weight="bold"))
         self.shift_display.pack(pady=(0, 15))
 
-        # Action Buttons
         btn_frame = ctk.CTkFrame(control_frame, fg_color="transparent")
         btn_frame.pack(fill="x")
 
@@ -83,7 +80,6 @@ class PremiumCryptoEngine:
                                        font=ctk.CTkFont(size=12, weight="bold"))
         self.status_bar.pack(side="bottom", pady=10)
 
-    # --- LOGIC & EVENTS ---
     def _update_shift_label(self, value):
         self.shift_display.configure(text=f"Key: {int(value)}")
 
@@ -107,8 +103,7 @@ class PremiumCryptoEngine:
                 result += chr((ord(char) - base + shift) % 26 + base)
             else:
                 result += char
-                
-        # Update Output UI safely
+
         self.output_text.configure(state="normal")
         self.output_text.delete("1.0", "end")
         self.output_text.insert("end", result)
